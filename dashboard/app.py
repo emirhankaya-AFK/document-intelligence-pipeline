@@ -6,14 +6,13 @@ from __future__ import annotations
 
 import json
 import sys
-import time
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
 
-import streamlit as st
-from dashboard.theme import get_css
+import streamlit as st  # noqa: E402
+from dashboard.theme import get_css  # noqa: E402
 
 # Page config
 st.set_page_config(

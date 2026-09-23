@@ -1,7 +1,6 @@
 """Citation builder — attaches page number, snippet, and bbox to each field."""
 from __future__ import annotations
 
-import re
 from src.models.schemas import ExtractionResult, FieldEvidence
 
 

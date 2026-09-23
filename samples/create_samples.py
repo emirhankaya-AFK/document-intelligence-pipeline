@@ -5,7 +5,6 @@ All companies and persons are fictional.
 """
 from __future__ import annotations
 
-import os
 import sys
 from pathlib import Path
 
@@ -14,12 +13,12 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import cm
-from reportlab.lib.colors import HexColor, black, white, grey
+from reportlab.lib.colors import HexColor, white, grey
 from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable,
 )
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_RIGHT
+from reportlab.lib.enums import TA_RIGHT
 
 # Colours
 NAVY = HexColor("#1e3a5f")
@@ -345,7 +344,6 @@ def create_technical_1(out_path: Path) -> None:
     h2 = _style("h2", fontSize=13, fontName="Helvetica-Bold", textColor=NAVY, spaceBefore=10, spaceAfter=4)
     h3 = _style("h3", fontSize=11, fontName="Helvetica-Bold", spaceBefore=6, spaceAfter=3)
     normal = _style("norm", fontSize=10, spaceAfter=4, leading=14)
-    code = _style("code", fontSize=9, fontName="Courier", backColor=LIGHT_GREY, spaceAfter=4)
 
     elems.append(Paragraph("Belge Zekası API — Teknik Doküman", h1))
     elems.append(Paragraph("Versiyon: v2.1.0", normal))

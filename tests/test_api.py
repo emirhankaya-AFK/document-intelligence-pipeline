@@ -2,11 +2,8 @@
 from __future__ import annotations
 
 import sys
-import json
 from pathlib import Path
-from unittest.mock import patch, MagicMock
 
-import pytest
 from fastapi.testclient import TestClient
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -53,7 +50,8 @@ class TestUploadEndpoint:
 
     def test_upload_wrong_extension_rejected(self):
         # Create a tiny fake file with .txt extension
-        import tempfile, os
+        import tempfile
+        import os
         with tempfile.NamedTemporaryFile(suffix=".txt", delete=False) as tmp:
             tmp.write(b"hello")
             tmp_path = tmp.name

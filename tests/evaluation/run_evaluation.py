@@ -15,8 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(ROOT))
 
-from src.pipeline.coordinator import DocumentPipeline
-from src.models.schemas import DocumentType
+from src.pipeline.coordinator import DocumentPipeline  # noqa: E402
 
 GROUND_TRUTH = Path(__file__).parent / "ground_truth.json"
 

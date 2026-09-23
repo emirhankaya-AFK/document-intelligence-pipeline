@@ -9,7 +9,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.pipeline.coordinator import DocumentPipeline
-from src.models.schemas import DocumentType, JobStatus
+from src.models.schemas import DocumentType
 
 SAMPLES = Path(__file__).parent.parent / "samples"
 pipeline = DocumentPipeline()

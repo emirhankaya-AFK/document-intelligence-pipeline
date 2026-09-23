@@ -6,7 +6,6 @@ import uuid
 from pathlib import Path
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
-from fastapi.responses import JSONResponse
 
 from src.models.schemas import JobStatus, StatusResponse, UploadResponse
 
@@ -91,7 +90,6 @@ async def get_status(job_id: str):
 
 def _run_sync(file_path: str, job_id: str) -> None:
     """Run the pipeline synchronously and store result in a temp JSON file."""
-    import json
     from src.pipeline.coordinator import DocumentPipeline
 
     result_dir = Path(os.getenv("RESULT_DIR", "/tmp/doc_results"))
